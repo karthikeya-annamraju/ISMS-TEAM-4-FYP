@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Subscription Management System Design System */
+
+@layer base {
+  :root {
+    /* Dark theme base colors */
+    --background: 225 15% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 225 15% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 225 15% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Indigo for actions */
+    --primary: 238 56% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Gray for neutral */
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 13% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Success - Green */
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+
+    /* Danger - Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Discount - Yellow */
+    --discount: 45 93% 58%;
+    --discount-foreground: 225 15% 8%;
+
+    /* Special offers - Pink */
+    --special: 330 81% 60%;
+    --special-foreground: 210 40% 98%;
+
+    /* Info - Cyan */
+    --info: 188 78% 50%;
+    --info-foreground: 225 15% 8%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 15%;
+    --ring: 238 56% 58%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(238 56% 58%), hsl(250 70% 65%));
+    --gradient-card: linear-gradient(135deg, hsl(225 15% 12%), hsl(225 15% 15%));
+    --gradient-special: linear-gradient(135deg, hsl(330 81% 60%), hsl(340 85% 65%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(238 56% 58% / 0.3);
+    --shadow-card: 0 8px 32px hsl(225 15% 5% / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+/* Network Animation Background */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* Custom Component Classes */
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/80 text-secondary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-300;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-discount {
+    @apply bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-special {
+    @apply bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-info {
+    @apply bg-cyan-400 hover:bg-cyan-500 text-gray-900 px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .card-glow {
+    @apply bg-card backdrop-blur-sm border border-border/50 rounded-2xl shadow-2xl;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-card/80 border border-border/30 rounded-2xl;
+  }
+  
+  .network-node {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .network-pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

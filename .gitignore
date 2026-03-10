@@ -1,0 +1,34 @@
+# ===== General =====
+.DS_Store
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# ===== Frontend (React/Vite) =====
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# ===== Backend (Spring Boot) =====
+backend/target/
+backend/bin/
+backend/.idea/
+backend/.settings/
+backend/.classpath
+backend/.project
+backend/*.iml
+backend/.factorypath
+
+# ===== AI Service (Python) =====
+ai_service/__pycache__/
+ai_service/*.pyc
+ai_service/*.pyo
+ai_service/venv/
+ai_service/env/
+ai_service/.env
+ai_service/.venv/
